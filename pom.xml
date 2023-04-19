@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>in.ac.bits-pilani.wilp.scalable-services.assignment</groupId>
+  <artifactId>ssa1-single-docker</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <build>
+	  <plugins>
+		  <plugin>
+		        <groupId>io.fabric8</groupId>
+		        <artifactId>docker-maven-plugin</artifactId>
+		        <version>0.42.1</version>
+		        <configuration>
+					<verbose>true</verbose>					
+					  <images>
+					    <image>
+					      <name>2021mt93641/%a:%v</name>
+					      <build>
+							  <cleanup>remove</cleanup>
+							  <dockerFile>${project.basedir}/Dockerfile</dockerFile>
+							  <contextDir>${project.basedir}</contextDir>
+						  </build>
+					    </image>
+					  </images>
+		        </configuration>
+	      </plugin>
+	  </plugins>
+  </build>
+</project>
