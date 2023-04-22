@@ -29,6 +29,6 @@ spec:
               name: ssa1-furniture-order-service
               port:
                 number: 8083
-          path: /order/(.*)
+          path: /sales/(.*)
           pathType: Prefix
 
